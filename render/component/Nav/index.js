@@ -5,19 +5,26 @@ import { Link } from "react-router-dom";
 import icon from "$public/image/icon.png";
 import "./index.less";
 import { routers } from "../../routes";
+// import Home from './icon/Home.svg'
+// import Home from './icon/Home.svg'
+// import Home from './icon/Home.svg'
+// import Home from './icon/Home.svg'
+// import Home from './icon/Home.svg'
 
 const { Item } = Menu;
 
 class Nav extends Component {
   constructor(props) {
+    console.log('-------__>', require(`./icon/Home.svg`))
     super(props);
     const hash = location.hash.split("/")[1] || "Home";
-    this.state = { current: hash, isFold:true };
+    this.state = { current: hash, isFold: false };
     this.props.onChangeRoute(routers.find((item) => item.key === hash));
   }
   componentDidMount() {
     window.addEventListener("hashchange", (e) => {
       const hash = location.hash.split("/")[1];
+      this.props.onChangeRoute(routers.find((item) => item.key === hash));
       this.setState({
         current: hash || "Home",
       });
@@ -51,7 +58,7 @@ class Nav extends Component {
           defaultSelectedKeys={[this.state.current]}
           // defaultOpenKeys={['sub1']}
           mode="inline"
-          theme="dark"
+          theme="light"
           inlineCollapsed={this.state.collapsed}
           selectedKeys={[this.state.current]}
           onClick={this.handleClick}
@@ -59,7 +66,10 @@ class Nav extends Component {
         >
           {routers.map((item) => (
             <Item {...item}>
-              <Link to={item.path}>{item.title}</Link>
+              <Link to={item.path}>
+                <img src={require(`./icon/${item.key}.svg`)} />
+                <span>{item.title}</span>
+              </Link>
             </Item>
           ))}
         </Menu>

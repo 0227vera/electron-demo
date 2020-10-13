@@ -1,17 +1,43 @@
 :global .nav {
-  width: 220px;
+  width: 200px;
   height: 100%;
   z-index: 9999;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   transition: width 0.3s;
-  .iconContainer {
-    padding: 0 8px;
-    padding-top: 15px;
-    padding-bottom: 8px;
+  .navContent {
+    flex: 1;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+  .ant-menu-light {
+    background: rgba(255, 255, 255, 0.9);
+  }
+  .ant-menu-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: auto;
     overflow: hidden;
-    background: #001529;
+    a {
+      display: flex;
+      align-items: center;
+      span {
+        font-weight: 600;
+      }
+    }
+    img {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      margin-right: 8px;
+    }
+  }
+  .iconContainer {
+    background: rgba(255, 255, 255, 0.99);
+    padding: 8px;
+    overflow: hidden;
     -webkit-app-region: drag;
     display: flex;
     flex-direction: row;
@@ -19,23 +45,26 @@
     overflow: hidden;
     .anticon {
       font-size: 20px;
-      color: #fff;
+      font-weight: 600;
       cursor: pointer;
     }
     .titleText {
       flex: 1;
       font-size: 16px;
-      color: white;
+      font-weight: 700;
+      color: #333;
+      padding-left: 10px;
     }
     .icon {
       cursor: pointer;
       display: inline-block;
       left: 20px;
       top: 5px;
-      height: 55px;
-      width: 55px;
+      height: 47px;
+      width: 47px;
       border-radius: 50%;
       padding: 2px;
+      color: #449eff;
     }
   }
 }
@@ -58,29 +87,20 @@
     text-align: center;
     padding-left: 16px !important;
     a {
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      span {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    img {
+      margin-bottom: 8px;
+      margin-right: 0;
     }
   }
-}
-
-:global .navContent {
-  flex: 1;
-  width: 100%;
-  overflow-x: hidden;
-  -webkit-overflow-scrolling: touch;
-}
-
-:global .ant-menu-item {
-  height: 64px;
-  line-height: 64px;
-}
-
-:global .ant-menu-dark {
-  height: 64px;
-  line-height: 64px;
-  background: rgba(0, 21, 41, 0.95);
 }
 
 :global .ant-menu-root {

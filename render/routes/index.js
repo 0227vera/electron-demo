@@ -1,89 +1,22 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Home from '$views/Home';
-import Antd from '$views/Antd';
-import Protect from '$views/Protect';
-import Window from '$views/Window';
-import Dialog from '$views/Dialog';
-import System from '$views/System';
-import Print from '$views/Print';
-import Shell from '$views/Shell';
-import MenuView from '$views/MenuView';
-import IPC from '$views/IPC';
+import Electron from '$views/Electron';
 import Blog from '$views/Blog';
 import NicCli from '$views/NicCli';
+import ComponentLib from '$views/ComponentLib';
+import GIT from '$views/GIT';
+import NodeJS from '$views/NodeJS';
+import ReactNative from '$views/ReactNative';
+import Interface from '$views/Interface';
 
 export const routers = [
   {
     path: '/Home',
     component: Home,
-    title: '主页',
+    title: 'Home',
     key: 'Home',
     exact: true,
-  },
-  {
-    path: '/Protect',
-    component: Protect,
-    title: '保护措施',
-    key: 'Protect',
-    exact: true,
-  },
-  {
-    path: '/Antd',
-    component: Antd,
-    title: 'Antd',
-    key: 'Antd',
-    exact: true,
-  },
-  {
-    path: '/Window',
-    component: Window,
-    title: '窗口',
-    key: 'Window',
-    exact: true,
-  },
-  {
-    path: '/Dialog',
-    component: Dialog,
-    title: 'Dialog',
-    key: 'Dialog',
-    exact: true,
-  },
-  {
-    path: '/System',
-    component: System,
-    title: '系统',
-    key: 'System',
-    exact: true,
-    needHeader: true,
-  },
-  {
-    path: '/Print',
-    component: Print,
-    title: '打印',
-    key: 'Print',
-    exact: true,
-  },
-  {
-    path: '/Shell',
-    component: Shell,
-    title: 'Shell',
-    key: 'Shell',
-    exact: true,
-  },
-  {
-    path: '/MenuView',
-    component: MenuView,
-    title: '菜单',
-    key: 'MenuView',
-    exact: true,
-  },
-  {
-    path: '/IPC',
-    component: IPC,
-    title: '进程通信',
-    key: 'IPC',
-    exact: true
   },
   {
     path: '/Blog',
@@ -98,6 +31,48 @@ export const routers = [
     component: NicCli,
     title: 'NicCli',
     key: 'NicCli',
+    exact: true,
+  },
+  {
+    path: '/Electron',
+    component: Electron,
+    title: 'Electron',
+    key: 'Electron',
+    exact: true,
+  },
+  {
+    path: '/ComponentLib',
+    component: ComponentLib,
+    title: 'ComponentLib',
+    key: 'ComponentLib',
+    exact: true,
+  },
+  {
+    path: '/GIT',
+    component: GIT,
+    title: 'GIT',
+    key: 'GIT',
+    exact: true,
+  },
+  {
+    path: '/NodeJS',
+    component: NodeJS,
+    title: 'NodeJS',
+    key: 'NodeJS',
+    exact: true,
+  },
+  {
+    path: '/ReactNative',
+    component: ReactNative,
+    title: 'ReactNative',
+    key: 'ReactNative',
+    exact: true,
+  },
+  {
+    path: '/Interface',
+    component: Interface,
+    title: 'Interface',
+    key: 'Interface',
     exact: true,
   },
 ]

@@ -1,5 +1,7 @@
 # electron-react
 
+[相关 electron 的介绍](./electron.md)
+
 electron + react + react-router + mobx + webpack 搭建的脚手架工程
 
 ## 项目路径与命名
