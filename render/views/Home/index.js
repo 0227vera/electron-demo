@@ -35,13 +35,6 @@ const template = [
     href: '/ComponentLib'
   },
   {
-    title: 'git',
-    desc: '常用的git处理',
-    key: '5',
-    img: kobe,
-    href: '/GIT'
-  },
-  {
     title: 'nodeJS',
     desc: 'nodeJS相关知识',
     key: '6',

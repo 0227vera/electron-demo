@@ -5,7 +5,6 @@ import Electron from '$views/Electron';
 import Blog from '$views/Blog';
 import NicCli from '$views/NicCli';
 import ComponentLib from '$views/ComponentLib';
-import GIT from '$views/GIT';
 import NodeJS from '$views/NodeJS';
 import ReactNative from '$views/ReactNative';
 import Interface from '$views/Interface';
@@ -48,13 +47,6 @@ export const routers = [
     exact: true,
   },
   {
-    path: '/GIT',
-    component: GIT,
-    title: 'GIT',
-    key: 'GIT',
-    exact: true,
-  },
-  {
     path: '/NodeJS',
     component: NodeJS,
     title: 'NodeJS',
@@ -74,6 +66,7 @@ export const routers = [
     title: 'Interface',
     key: 'Interface',
     exact: true,
+    ishideheader:true
   },
 ]
 

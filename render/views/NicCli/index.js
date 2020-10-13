@@ -1,56 +1,26 @@
 import React from 'react'
+import {remote} from 'electron'
+const { shell } = remote
 
 export default function index() {
   return (
     <div>
-      # 模版初始化小工具
-
-## 使用方式
-
-npm install -g nic-cli
-
-### h5项目
-
-```shell
-nic init h5
-```
-
-1. `vue`: `vue + vuex + vue-router + axios + vant`
-
-2. `react`: `react + react-router-dom + mobx(js) + axios + ant-design-mobild`
-
-### WEB端项目
-
-```shell
-nic init web
-```
-
-1. `vue`: `vue + vuex + vue-router + axios + element-ui`
-
-2. `react`: `react + react-router-dom + mobx(ts) + axios + ant-design`
-
-### 小程序项目
-
-```shell
-nic init applet
-```
-
-### node项目
-
-```shell
-nic init node
-```
-
-`node`: `mongodb + express + http + fs + ……`
-
-### 开发注意
-
-`#!/usr/bin/env node` 表示node运行环境；在weindows上开发，请使用`npm link`到系统模块可以使用命令，mac上直接`npm run dev`即可
-
-### 问题
-
-如果你是windows的电脑，请使用`bash`的终端，否则会出现`undefined`的目录的情况，这种问题我是不会负责的，毕竟我是用来服务自己的，还有请尽量使用最新版本
-
+      <span>
+        随着开发的时间推移，越来越觉得需要形成一套自己的开发习惯，于是根据自己的开发习惯形成了几套模版，集成到相应的脚手架中，在开发中的好处：
+      </span>
+      <ol>
+        <li>形成统一的开发规范，方便日后的维护</li>
+        <li>自动化模版，提高开发效率</li>
+        <li>开发脚手架，改变自己的开发思想，提炼部分通用的解决方案</li>
+        <li>配置初始化相关配置，降低同事之间的开发成本</li>
+      </ol>
+      <div>
+        <span>脚手架地址：</span>
+        <a href="https://www.npmjs.com/package/nic-cli" onClick={(e) => {
+          e.preventDefault();
+          shell.openExternal("https://www.npmjs.com/package/nic-cli");
+        }}>https://www.npmjs.com/package/nic-cli</a>
+      </div>
     </div>
   )
 }
