@@ -1,12 +1,12 @@
 {
-  "name": "electron-react",
+  "name": "nic",
   "version": "1.0.0",
   "description": "electron-react脚手架工程",
   "main": "main.js",
   "build-config": {
     "appid": "3f026c5D1F515y8V4d2F0M6AER38nSQ1",
     "version": "100",
-    "env": "development"
+    "env": "production"
   },
   "scripts": {
     "start": "npm run compile-main && cross-env NODE_ENV=development node ./scripts/server.js",
@@ -14,7 +14,7 @@
     "eslint": "echo \"代码检测中...\" && eslint  *.js --cache",
     "eslint-fix": "npm run --silent eslint -- --fix; exit 0",
     "build-win": "electron-builder --win --ia32",
-    "build-mac": "electron-builder -mwl",
+    "build-mac": "electron-builder --mac",
     "compile": "npm run compile-main && npm run compile-render",
     "compile-main": "babel -D ./main -d ./main_process",
     "compile-render": "webpack --config ./scripts/webpack-prod.js --color --progress",
@@ -28,6 +28,7 @@
   ],
   "author": "salvatore",
   "devDependencies": {
+    "@ant-design/icons": "^4.2.2",
     "antd": "3.7.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.0.0",
@@ -44,8 +45,10 @@
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^5.2.0",
     "css-loader": "^0.28.7",
-    "electron": "2.0.0",
+    "dotenv": "^8.2.0",
+    "electron": "^2.0.4",
     "electron-builder": "^20.29.0",
+    "electron-notarize": "^1.0.0",
     "eslint": "^5.8.0",
     "eslint-config-standard": "10.2.1",
     "extract-text-webpack-plugin": "^3.0.2",
@@ -71,7 +74,7 @@
     "webpack-hot-middleware": "^2.20.0"
   },
   "dependencies": {
-    "@ant-design/icons": "^4.2.2",
+    "babel-runtime": "^6.26.0",
     "fs-extra": "^5.0.0",
     "getmac": "^1.4.1",
     "md5-file": "^3.2.3",
@@ -80,20 +83,22 @@
     "winreg": "^1.2.4"
   },
   "build": {
-    "productName": "electron-react",
-    "appId": "4g160y1R7l5F5R854n250z6snRCktwS1",
-    "asar": false,
+    "productName": "nic",
+    "appId": "org.simulatedgreg.electron-builder-start",
+    "asar": true,
     "files": [
       "package.json",
       "main.js",
       "main_process/",
       "render_process/",
       "node_modules/",
-      "icon.ico"
+      "icon.ico",
+      "512.ico"
     ],
     "npmRebuild": false,
     "dmg": {
-      "artifactName": "nic-cli-test.dmg",
+      "artifactName": "nic.dmg",
+      "sign": false,
       "contents": [
         {
           "type": "link",
@@ -111,11 +116,11 @@
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
-      "shortcutName": "nic-cli-test"
+      "shortcutName": "nic"
     },
     "mac": {
       "target": "dmg",
-      "icon": "icon.ico"
+      "icon": "512.ico"
     },
     "win": {
       "target": "nsis",

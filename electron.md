@@ -39,3 +39,9 @@ Atom
 内存占用比较高（chrome 本身内存比较高）
 界面性能无法与 native 原生相比较，但是还好
 代码安全，js 是明文的，导致的的相关身份信息可能泄漏
+
+## 使用 electron-build
+
+1. dependencies 中的依赖表示 electron 的生产依赖，devDependencies 这个里面的依赖最终都会达成一个包给 electron 的渲染进程，所以像 vue/react 的包都会打在这个里面，这一点需要注意一下
+2. 注意 icon 的设置大小，不同的 electron 版本可能有不同的要求
+3. 不能跨平台打包，mac 不能打 win 的包，可能有相关的解决方案，但是 win 肯定是不可以打 mac 的包的
