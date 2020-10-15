@@ -6,7 +6,7 @@
   "build-config": {
     "appid": "3f026c5D1F515y8V4d2F0M6AER38nSQ1",
     "version": "100",
-    "env": "production"
+    "env": "development"
   },
   "scripts": {
     "start": "npm run compile-main && cross-env NODE_ENV=development node ./scripts/server.js",

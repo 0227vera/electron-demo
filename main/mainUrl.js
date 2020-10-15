@@ -11,15 +11,15 @@ export default function() {
       slashes: true,
     });
   }
-  return url.format({
-    protocol: "file:",
-    pathname: path.join(__dirname, "..", "render_process", `index.html`),
-    slashes: true,
-  });
   // return url.format({
-  //   protocol: 'file:',
-  //   pathname: path.join(__dirname, 'env/environment.html'),
+  //   protocol: "file:",
+  //   pathname: path.join(__dirname, "..", "render_process", `index.html`),
   //   slashes: true,
-  //   query: { debugger: build.env === "development" }
   // });
+  return url.format({
+    protocol: 'file:',
+    pathname: path.join(__dirname, 'env/environment.html'),
+    slashes: true,
+    query: { debugger: build.env === "development" }
+  });
 }
